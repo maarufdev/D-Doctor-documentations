@@ -43,7 +43,21 @@ Before running the project, ensure the following software is installed on your m
 The **E-Doctor App** consists of two major modules:
 
 ### 👨‍⚕️ Admin Module
-- Manage diseases and associated symptoms  
+- Manage Users
+![Acer_Wallpaper_01_3840x2400](https://github.com/user-attachments/assets/cc736d5d-2f28-42f4-9fb0-37f00b8371ad)
+<img width="1904" height="990" alt="image" src="https://github.com/user-attachments/assets/5eb67aeb-3118-4f95-be23-fd2c67c9e62c" />
+<img width="1908" height="999" alt="image" src="https://github.com/user-attachments/assets/55bae9a9-58bf-4fad-96a2-a99a0dd67699" />
+<img width="1901" height="1018" alt="image" src="https://github.com/user-attachments/assets/d57e222e-36b6-498e-ad51-ead0324fb063" />
+<img width="1902" height="957" alt="image" src="https://github.com/user-attachments/assets/eb4eb02d-bff5-4622-8939-9a817a016ab0" />
+<img width="1906" height="961" alt="image" src="https://github.com/user-attachments/assets/cf88c82f-8a6f-47e2-baf2-531a33590fb0" />
+<img width="1895" height="968" alt="image" src="https://github.com/user-attachments/assets/8c28c0d6-daf0-48c4-a342-d0ebbc14b982" />
+
+
+
+
+
+
+- User Activites 
 - Configure rule-based logic for diagnosis  
 - Monitor user activity logs  
 - Test configured rules with sample questions  
