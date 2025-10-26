@@ -46,83 +46,53 @@ Follow this step-by-step guide to install and configure **Microsoft SQL Server**
 
 ---
 
-## ⚙️ Step 2: Install Microsoft SQL Server
+## 🧱 MS SQL Server Installation Guide
 
-1. Run the installer file (`SQLServer2019-SSEI-Dev.exe` or later).
-2. Choose **Basic** installation.
-3. On the **Feature Selection** screen, ensure **Database Engine Services** is checked.
-4. Continue to **Instance Configuration** — you can keep **Default instance (MSSQLSERVER)**.
-5. In **Server Configuration**, click **Next**.
-6. In **Database Engine Configuration**:
-   - Select **Mixed Mode (SQL Server authentication and Windows authentication)**.
-   - Enter a password for the `sa` (System Administrator) account:  
-     ```
-     Username: sa
-     Password: P@ssw0rd123!
-     ```
-   - Click **Add Current User** under *Specify SQL Server administrators*.
-7. Proceed to complete the installation.
+### Step 1: Install SQL Server
+1. Download **SQL Server 2019+** from  
+   👉 [Download SQL Server](https://go.microsoft.com/fwlink/p/?linkid=2216019&clcid=0x409&culture=en-us&country=us)
+2. Run the installer.
+3. Choose **Basic** or **Custom** installation.
+4. Remember your **Instance Name** (e.g., `SQLEXPRESS`).
+
+### Step 2: Install SSMS
+1. Download **SQL Server Management Studio (SSMS)** from  
+   👉 [Download SSMS](https://aka.ms/ssmsfullsetup)
+2. Install and open SSMS.
+3. Connect to your server using **Windows Authentication**.
 
 ---
 
-## 🔐 Step 3: Enable SQL Authentication (if not enabled)
-
-If you did not select **Mixed Mode Authentication** during installation:
+## 🔐 Enabling SQL Server Authentication (`sa` Account)
 
 1. Open **SQL Server Management Studio (SSMS)**.
-2. Connect using **Windows Authentication**.
-3. Right-click the server name in **Object Explorer** → click **Properties**.
-4. Go to **Security** → choose **SQL Server and Windows Authentication mode**.
-5. Click **OK**.
-6. Restart the SQL Server service:
-   - In SSMS: Right-click the server → **Restart**, or  
-   - In Windows Services: restart **SQL Server (MSSQLSERVER)**.
+2. Right-click your server > **Properties** > **Security**.
+3. Select **SQL Server and Windows Authentication mode**.
+4. Click **OK** and restart the SQL Server service.
+5. Expand **Security → Logins → sa**.
+6. Right-click **sa → Properties** → Set a new password.
+7. Under **Status**, set **Login: Enabled**.
+8. Click **OK**.
+
+> ✅ You can now log in using SQL Authentication:
+> - **Username:** sa  
+> - **Password:** your password (e.g., `P@ssword123@`)
 
 ---
 
-## 👤 Step 4: Enable and Set Password for `sa` Account
+## ⚙️ Updating Connection String in `appsettings.json`
 
-1. In **SSMS**, expand **Security → Logins**.
-2. Right-click **sa** → choose **Properties**.
-3. Under **General**, set a strong password (e.g. `P@ssw0rd123!`).
-4. Under **Status**, ensure:
-   - **Login:** Enabled  
-   - **Grant:** Connect SQL → Yes  
-5. Click **OK** to save changes.
+After configuring your SQL Server, update your **web app** settings.
 
----
+### Step 2: Update the MSSQL connection
 
-## 🧩 Step 5: Test Connection
-
-1. Open **SQL Server Management Studio (SSMS)**.
-2. In the connection dialog:
-   - **Server type:** Database Engine  
-   - **Server name:** `(local)` or `localhost`  
-   - **Authentication:** SQL Server Authentication  
-   - **Login:** `sa`  
-   - **Password:** (your chosen password)
-3. Click **Connect**.
-
-✅ If the connection is successful, SQL authentication is configured correctly.
-
----
-
-## 🧠 Additional Notes
-
-- Always use a **strong password** for the `sa` account.
-- For production setups:
-  - Disable `sa` login and create a separate SQL user with limited privileges.
-  - Use **Windows Authentication** whenever possible for better security.
-
----
-
-## 🧩 Related Documentation
-
-- [Install .NET 8 SDK](https://dotnet.microsoft.com/en-us/download)
-- [Install Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
-- [Install Git](https://git-scm.com/downloads)
-- [Official SQL Server Docs](https://learn.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver16)
-
+"MSSQLConnectionStrings": {
+  "DataSource": "LAPTOP-1M04D55K\\SQLEXPRESS",
+  "Username": "sa",
+  "Password": "P@ssword123@",
+  "Database": "e-doctor-db"
+}
+<img width="1891" height="538" alt="image" src="https://github.com/user-attachments/assets/9eff85a7-4053-4762-8e91-b21c4912875b" />
 
 ## 🩺 Project Overview
 
