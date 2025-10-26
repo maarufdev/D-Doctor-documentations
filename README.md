@@ -30,6 +30,9 @@ Before running the project, ensure the following software is installed on your m
 - **.NET 8 SDK or later**
 - **Visual Studio 2022 (with ASP.NET and web development workload)**
 - **Git**
+
+- **[Microsoft SQL Server 2019+](https://go.microsoft.com/fwlink/p/?linkid=2216019&clcid=0x409&culture=en-us&country=us)**
+- **[Microsoft SQL Server Management Studio (SSMS)](https://aka.ms/ssmsfullsetup)**
 ---
 
 ## 🩺 Project Overview
